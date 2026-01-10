@@ -31,7 +31,7 @@ public class service {
         return taskRepository.findByCompletedFalse();
     }
     
-    public void deleteTask(Task task) {
+    public void delTask(Task task) {
         taskRepository.delete(task);
     }
     

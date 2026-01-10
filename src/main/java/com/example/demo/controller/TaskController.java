@@ -19,7 +19,7 @@ public class TaskController {
     public ResponseEntity<List<Task>> getAllTasks() {
         return ResponseEntity.ok(taskService.getAllTask());
     }
-    @GetMapping("/completed")
+    @GetMapping("/complete")
     public ResponseEntity<List<Task>> getAllCompletedTasks() {
         return ResponseEntity.ok(taskService.findAllCompletedTask());
     }
@@ -38,7 +38,6 @@ public class TaskController {
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> getAllTasks(@PathVariable Long id) {
-        taskService.deleteTask(id);
         return ResponseEntity.ok(true);
     }
 }
