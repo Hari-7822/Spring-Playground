@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import com.example.bean.*;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class TaskController {
     public ResponseEntity<List<Task>> getAllIncompleteTasks() {
         return ResponseEntity.ok(taskService.findAllInCompleteTask());
     }
-    @PostMapping("/")
+    @PostMapping("/create")
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
         return ResponseEntity.ok(taskService.createNewTask(task));
     }
@@ -40,4 +41,10 @@ public class TaskController {
     public ResponseEntity<Boolean> getAllTasks(@PathVariable Long id) {
         return ResponseEntity.ok(true);
     }
+    
+    @PostMapping("/addUser")
+    public String processForm(user usr) {
+
+    return "showMessage";
+}
 }
